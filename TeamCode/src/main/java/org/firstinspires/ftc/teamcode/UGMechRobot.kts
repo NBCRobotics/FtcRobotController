@@ -22,7 +22,7 @@ import kotlin.math.pow
 /**
  * Created by S_Suchyy on 10/14/2020. ---
  */
-class SSMechRobot {
+class UGMechRobot {
 
     var hwdMap: HardwareMap? = null
     var bLDrive: DcMotor? = null
