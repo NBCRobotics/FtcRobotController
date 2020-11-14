@@ -2,17 +2,17 @@ package org.firstinspires.ftc.teamcode
 
 import com.qualcomm.hardware.bosch.BNO055IMU
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator
-import com.qualcomm.robotcore.hardware.*  
+import com.qualcomm.robotcore.hardware.*
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation
-import org.openftc.revextensions2.ExpansionHubEx
+//import org.openftc.revextensions2.ExpansionHubEx
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.pow
 
-/* 
+/*
     TODO: Clean up the Code to match this years season
 
 
@@ -29,10 +29,10 @@ class UGMechRobot {
     var bRDrive: DcMotor? = null
     var fLDrive: DcMotor? = null
     var fRDrive: DcMotor? = null
-//    var vSlide: DcMotorEx? = null
+    //    var vSlide: DcMotorEx? = null
 //    var hSlide: Servo? = null
 //    var touch: DigitalChannel? = null
-    var hub2: ExpansionHubEx? = null
+    //var hub2: ExpansionHubEx? = null
     var imu: BNO055IMU? = null
 
 
@@ -71,7 +71,7 @@ class UGMechRobot {
 //        vSlide = ahwdMap.dcMotor.get("vSlide") as DcMotorEx
 //        hSlide = ahwdMap.servo.get("hSlide")
 //        touch = ahwdMap.digitalChannel.get("touch")
-        hub2 = ahwdMap.get(ExpansionHubEx::class.java, "Expansion Hub 2")
+        //hub2 = ahwdMap.get(ExpansionHubEx::class.java, "Expansion Hub 2")
         imu = ahwdMap.get(BNO055IMU::class.java, "imu")
 
         //Setting direction
@@ -79,7 +79,7 @@ class UGMechRobot {
         bRDrive?.direction = motR
         fLDrive?.direction = motF
         fRDrive?.direction = motR
-        vSlide?.direction = motR
+        //vSlide?.direction = motR
 //        hSlide?.direction = serR
 //        claw?.direction = serF
 
@@ -94,7 +94,7 @@ class UGMechRobot {
         bRDrive?.mode = DcMotor.RunMode.RUN_WITHOUT_ENCODER
 //        vSlide?.mode = DcMotor.RunMode.STOP_AND_RESET_ENCODER
 //        vSlide?.mode = DcMotor.RunMode.RUN_USING_ENCODER //Use encoders for linear slide motor
-       // curPos = this.vSlide!!.currentPosition
+        // curPos = this.vSlide!!.currentPosition
         //vSlide?.targetPosition = vSlide!!.currentPosition
 //        vSlide?.zeroPowerBehavior = DcMotor.ZeroPowerBehavior.BRAKE
 //        vSlide?.setVelocityPIDFCoefficients(kP, kI, kD, kF)
