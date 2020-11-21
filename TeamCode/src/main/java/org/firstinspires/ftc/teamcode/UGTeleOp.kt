@@ -49,6 +49,7 @@ class UGTeleOp : OpMode(){
              */
 
             robot.mechanumPOV(gamepad1) //Drive Power Calculation
+            robot.driveIntake(gamepad1)
 //            robot.vSlide?.power = robot.vSlideCalc(gamepad2)
 //            robot.hSlide?.position = robot.hSlideCalc(gamepad2)
 //            robot.pinch(gamepad2) //operates claw

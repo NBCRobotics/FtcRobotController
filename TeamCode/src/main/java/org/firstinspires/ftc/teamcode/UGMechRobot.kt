@@ -29,6 +29,8 @@ class UGMechRobot {
     var bRDrive: DcMotor? = null
     var fLDrive: DcMotor? = null
     var fRDrive: DcMotor? = null
+    var fIntake: DcMotor? = null
+    var bIntake: DcMotor? = null
     //    var vSlide: DcMotorEx? = null
 //    var hSlide: Servo? = null
 //    var touch: DigitalChannel? = null
@@ -68,6 +70,8 @@ class UGMechRobot {
         bRDrive = ahwdMap.dcMotor.get("bRDrive")
         fLDrive = ahwdMap.dcMotor.get("fLDrive")
         fRDrive = ahwdMap.dcMotor.get("fRDrive")
+        fIntake = ahwdMap.dcMotor.get("fIntake")
+        bIntake = ahwdMap.dcMotor.get("bIntake")
 //        vSlide = ahwdMap.dcMotor.get("vSlide") as DcMotorEx
 //        hSlide = ahwdMap.servo.get("hSlide")
 //        touch = ahwdMap.digitalChannel.get("touch")
@@ -79,6 +83,8 @@ class UGMechRobot {
         bRDrive?.direction = motR
         fLDrive?.direction = motF
         fRDrive?.direction = motR
+        fIntake?.direction = motF
+        bIntake?.direction = motR
         //vSlide?.direction = motR
 //        hSlide?.direction = serR
 //        claw?.direction = serF
@@ -90,6 +96,8 @@ class UGMechRobot {
         bRDrive?.power = 0.0
         fLDrive?.power = 0.0
         fRDrive?.power = 0.0
+        fIntake?.power = 0.0
+        bIntake?.power = 0.0
         bLDrive?.mode = DcMotor.RunMode.RUN_WITHOUT_ENCODER
         bRDrive?.mode = DcMotor.RunMode.RUN_WITHOUT_ENCODER
 //        vSlide?.mode = DcMotor.RunMode.STOP_AND_RESET_ENCODER
@@ -157,6 +165,25 @@ class UGMechRobot {
      */
     fun drive(pow: Double) {
         drive(pow, pow)
+    }
+//    fun intake(pow: Double){
+//        fIntake?.power = pow
+//        bIntake?.power = pow
+//    }
+    fun driveIntake(gp: Gamepad){
+
+        if (gp.right_bumper){
+            fIntake?.power = 1.9
+            bIntake?.power = 1.9
+
+        }
+        if (!(gp.right_bumper)){
+            fIntake?.power = 0.0
+            bIntake?.power = 0.0
+
+        }
+//        var drive = gp.left_stick_y.toDouble()
+//        intake(drive)
     }
 
     fun mechanumPOV(gp: Gamepad) {
